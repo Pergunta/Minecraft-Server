@@ -1,0 +1,23 @@
+version: '3'
+services:
+ minecraft:
+  container_name: minecraft-server
+  image: itzg/minecraft-server
+  restart: 'unless-stopped'
+  ports:
+   - '25565:25565'
+   - '8123:8123'
+  enviroment:
+   EULA: 'TRUE'
+   DIFFICULTY: 'normal'
+   MOTD: 'Welcome to the World of Zero Minecraft Server'
+   TYPE: 'BUKKIT'
+   OPS: runewake2
+   ANNOUNCE_PLAYER_ACHIEVMENTS: 'false'
+   MAX_PLAYERS: 20
+   MEMORY: 2G
+ 
+  volumes:
+   - C:\minecraft\data:/data
+  tty: true
+  stdin_open : true
